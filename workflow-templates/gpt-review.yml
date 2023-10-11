@@ -2,7 +2,7 @@ name: GPT Review on Pull Request
 
 on:
   pull_request_target:
-    branches: ["master"]
+    branches: [ $default-branch ]
 
 jobs:
   add_pr_comment:

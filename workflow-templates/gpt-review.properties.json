@@ -1,0 +1,4 @@
+{
+    "name": "gpt-review workflow",
+    "description": "OpenAI's GPT assisted code review."
+}
