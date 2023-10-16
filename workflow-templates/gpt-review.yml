@@ -74,10 +74,10 @@ jobs:
           echo '  {diff}' >> summary.yaml
           echo 'PROMPT_SUMMARY=$(pwd)/summary.yaml' >> $GITHUB_ENV
 
-      - name: Modify _review.py
-        run: |
-          echo '_CHECKS["SUMMARY_CHECKS"][0]["goal"] = "이 PR의 변경 사항을 개선하기 위한 제안을 제시해주세요. 만약 PR에 명확한 문제가 없다면, 제안이 필요 없다고 언급하세요. 결과는 한글로 작성하세요."' >> /home/runner/work/data-gcp-cloud-function/data-gcp-cloud-function/.env/lib/python3.11/site-packages/gpt_review/_review.py
-          echo '_CHECKS["RISK_CHECKS"][0]["goal"] = "Git diff에서 중대한 변경 사항을 감지하여 한글로 결과를 작성합니다. 다음은 중대한 변경 사항을 초래할 수 있는 몇 가지 요인입니다. - 기본값이 없고 필수인 공개 함수에 새로운 매개변수 추가"' >> /home/runner/work/data-gcp-cloud-function/data-gcp-cloud-function/.env/lib/python3.11/site-packages/gpt_review/_review.py
+      # - name: Modify _review.py
+      #   run: |
+      #     echo '_CHECKS["SUMMARY_CHECKS"][0]["goal"] = "이 PR의 변경 사항을 개선하기 위한 제안을 제시해주세요. 만약 PR에 명확한 문제가 없다면, 제안이 필요 없다고 언급하세요. 결과는 한글로 작성하세요."' >> /home/runner/work/data-gcp-cloud-function/data-gcp-cloud-function/.env/lib/python3.11/site-packages/gpt_review/_review.py
+      #     echo '_CHECKS["RISK_CHECKS"][0]["goal"] = "Git diff에서 중대한 변경 사항을 감지하여 한글로 결과를 작성합니다. 다음은 중대한 변경 사항을 초래할 수 있는 몇 가지 요인입니다. - 기본값이 없고 필수인 공개 함수에 새로운 매개변수 추가"' >> /home/runner/work/data-gcp-cloud-function/data-gcp-cloud-function/.env/lib/python3.11/site-packages/gpt_review/_review.py
 
       - name: Review PR and make comment
         shell: bash
